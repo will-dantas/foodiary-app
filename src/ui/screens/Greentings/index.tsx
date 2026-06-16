@@ -11,8 +11,14 @@ import { Logo } from '@ui/components/Logo';
 import { theme } from '@ui/styles/theme';
 
 import { styles } from './styles';
+import { SignInBottomSheet } from '@ui/components/SignInBottomSheet';
+import { ISignInBottomSheet } from '@ui/components/SignInBottomSheet/ISignInBottomSheet';
+import { AuthStackNavigationProps } from '@app/navigation/AuthStack';
 
 export function Greetings() {
+  const signInBottomSheetRef = useRef<ISignInBottomSheet>(null);
+  const navigation = useNavigation<AuthStackNavigationProps>();
+
   return (
     <>
       <ImageBackground
@@ -34,7 +40,7 @@ export function Greetings() {
             </AppText>
 
             <View style={styles.ctaContent}>
-              <Button>
+              <Button onPress={() => navigation.navigate('Onboarding')}>
                 Criar conta
               </Button>
 
@@ -42,7 +48,7 @@ export function Greetings() {
                 <AppText color={theme.colors.white}>
                   Já tem conta?
                 </AppText>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => signInBottomSheetRef.current?.open()}>
                   <AppText color={theme.colors.lime[500]} weight="medium">
                     Acesse a sua conta
                   </AppText>
@@ -52,6 +58,8 @@ export function Greetings() {
           </View>
         </SafeAreaView>
       </ImageBackground>
+
+      <SignInBottomSheet ref={signInBottomSheetRef} />
     </>
   );
 }

@@ -5,12 +5,15 @@ import {
   useFonts,
 } from '@expo-google-fonts/host-grotesk';
 
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { theme } from './styles/theme';
 import { AppText } from './components/AppText';
 import { Greetings } from './screens/Greentings';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { Navigation } from '@app/navigation';
 
 
 export function App() {
@@ -25,9 +28,11 @@ export function App() {
   }
 
   return (
-    <SafeAreaProvider>
-      <Greetings />
-    </SafeAreaProvider>
+    <GestureHandlerRootView >
+      <SafeAreaProvider>
+        <Navigation />
+      </SafeAreaProvider>
+    </GestureHandlerRootView>
   )
 }
 
