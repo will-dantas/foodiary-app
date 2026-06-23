@@ -7,7 +7,7 @@ export class AccountsService extends Service {
     const { data } = await this.client.get<AccountsService.GetMeResponse>(
       '/me',
     );
-    console.log('data', data);
+
     return {
       ...data,
       profile: {
