@@ -38,6 +38,7 @@ export function CreateAccountStep() {
         },
       });
     } catch (error) {
+      console.log(error)
       if (isAxiosError(error) && error.response?.data?.error?.code === ErrorCode.EMAIL_ALREADY_IN_USE) {
         Alert.alert('Oops!', 'Este e-mail já está sendo usado por outro usuário.');
         return;

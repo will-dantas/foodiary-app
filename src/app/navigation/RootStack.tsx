@@ -8,6 +8,7 @@ import {
 // import { useAuth } from '@app/contexts/AuthContext/useAuth';
 import { AuthStack } from './AuthStack';
 import { AppStack } from './AppStack';
+import { useAuth } from '@app/contexts/AuthContext/useAuth';
 
 type RootStackParamList = {
   Auth: undefined;
@@ -27,11 +28,11 @@ export type RootStackRouteProps<
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export function RootStack() {
-  // const { signedIn } = useAuth();
+  const { signedIn } = useAuth();
 
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      {/* {!signedIn && ( */}
+      {!signedIn && (
         <Stack.Screen
           name="Auth"
           component={AuthStack}
@@ -39,9 +40,9 @@ export function RootStack() {
             animationTypeForReplace: 'pop',
           }}
         />
-      {/* )} */}
+      )}
 
-      {/* {signedIn && ( */}
+      {signedIn && (
         <Stack.Screen
           name="App"
           component={AppStack}
@@ -49,7 +50,7 @@ export function RootStack() {
             animationTypeForReplace: 'push',
           }}
         />
-      {/* )} */}
+      )}
     </Stack.Navigator>
   );
 }

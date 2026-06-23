@@ -4,11 +4,11 @@ import React, { useImperativeHandle, useRef, useState } from 'react';
 import { TextInput } from 'react-native-gesture-handler';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { useAuth } from '@app/contexts/AuthContext/useAuth';
 import { ISignInBottomSheet } from './ISignInBottomSheet';
 import { useForm } from 'react-hook-form';
 import { Alert } from 'react-native';
 import { signInSchema } from './schema';
+import { useAuth } from '@app/contexts/AuthContext/useAuth';
 
 export function useSignInBottomSheetController(ref: React.Ref<ISignInBottomSheet>) {
   const bottomSheetModalRef = useRef<BottomSheetModal>(null);
@@ -20,7 +20,7 @@ export function useSignInBottomSheetController(ref: React.Ref<ISignInBottomSheet
   const form = useForm({
     resolver: zodResolver(signInSchema),
     defaultValues: {
-      email: 'mateus@jstack.com.br',
+      email: 'wmdantas2@gmail.com',
       password: '12345678',
     },
   });
@@ -32,8 +32,9 @@ export function useSignInBottomSheetController(ref: React.Ref<ISignInBottomSheet
   const handleSubmit = form.handleSubmit(async data => {
     try {
       setIsLoading(true);
+
       await signIn(data);
-    } catch {
+    } catch (error) {
       setIsLoading(false);
       Alert.alert('Oops!', 'As credenciais informadas são inválidas');
     }

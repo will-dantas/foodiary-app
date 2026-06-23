@@ -7,13 +7,11 @@ import {
 
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { theme } from './styles/theme';
-import { AppText } from './components/AppText';
-import { Greetings } from './screens/Greentings';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { AuthProvider } from '@app/contexts/AuthContext/AuthProvider';
 import { Navigation } from '@app/navigation';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { queryClient } from '@app/lib/queryClient';
+import { QueryClientProvider } from '@tanstack/react-query';
 
 
 export function App() {
@@ -30,17 +28,12 @@ export function App() {
   return (
     <GestureHandlerRootView >
       <SafeAreaProvider>
-        <Navigation />
+        <QueryClientProvider client={queryClient}>
+          <AuthProvider>
+            <Navigation />
+          </AuthProvider>
+        </QueryClientProvider>
       </SafeAreaProvider>
     </GestureHandlerRootView>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: theme.colors.lime[500],
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

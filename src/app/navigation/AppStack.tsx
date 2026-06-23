@@ -8,7 +8,7 @@ import { View } from 'react-native';
 
 // import { EditGoals } from '@ui/screens/EditGoals';
 // import { EditProfile } from '@ui/screens/EditProfile';
-// import { Home } from '@ui/screens/Home';
+import { Home } from '@ui/screens/Home';
 // import { MealDetails } from '@ui/screens/MealDetails';
 
 type AppStackParamList = {
@@ -34,14 +34,13 @@ const Stack = createNativeStackNavigator<AppStackParamList>();
 
 export function AppStack() {
   return (
-    <View>AppStack</View>
-    // <Stack.Navigator
-    //   screenOptions={{ headerShown: false }}
-    // >
-    //   <Stack.Screen name="Home" component={Home} />
-    //   <Stack.Screen name="MealDetails" component={MealDetails} />
-    //   <Stack.Screen name="EditGoals" component={EditGoals} />
-    //   <Stack.Screen name="EditProfile" component={EditProfile} />
-    // </Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{ headerShown: false }}
+    >
+      <Stack.Screen name="Home" component={Home} />
+      {/* <Stack.Screen name="MealDetails" component={MealDetails} />
+      <Stack.Screen name="EditGoals" component={EditGoals} />
+      <Stack.Screen name="EditProfile" component={EditProfile} /> */}
+    </Stack.Navigator>
   );
 }
