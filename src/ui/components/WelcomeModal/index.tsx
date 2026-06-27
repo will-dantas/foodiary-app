@@ -30,7 +30,7 @@ export function WelcomeModal() {
   const { signedUp } = useAuth();
   const { account } = useAccount();
   
-  const [visible, setVisible] = useState(true); // TODO: Voltar quando finalizar a tela de onboarding
+  const [visible, setVisible] = useState(signedUp); // TODO: Voltar quando finalizar a tela de onboarding
 
   const goal = goalsMap[account!.profile.goal];
 console.log('signedUp', goal?.icon);
