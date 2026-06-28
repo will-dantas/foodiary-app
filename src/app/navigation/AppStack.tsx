@@ -6,7 +6,7 @@ import {
 } from '@react-navigation/native-stack';
 import { View } from 'react-native';
 
-// import { EditGoals } from '@ui/screens/EditGoals';
+import { EditGoals } from '@ui/screens/EditGoals';
 // import { EditProfile } from '@ui/screens/EditProfile';
 import { Home } from '@ui/screens/Home';
 import { MealDetails } from '@ui/screens/MealDetails';
@@ -39,8 +39,8 @@ export function AppStack() {
     >
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="MealDetails" component={MealDetails} />
-      {/* <Stack.Screen name="EditGoals" component={EditGoals} />
-      <Stack.Screen name="EditProfile" component={EditProfile} /> */}
+      <Stack.Screen name="EditGoals" component={EditGoals} />
+      {/* <Stack.Screen name="EditProfile" component={EditProfile} /> */}
     </Stack.Navigator>
   );
 }

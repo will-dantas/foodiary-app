@@ -10,7 +10,7 @@ import { Controller } from 'react-hook-form';
 import { View } from 'react-native';
 import { AppText } from '../AppText';
 import { Button } from '../Button';
-import { Input } from '../Input ';
+import { Input } from '../Input';
 import { styles } from './styles';
 import { useSignInBottomSheetController } from './useSignInBottomSheetController';
 import { ISignInBottomSheet } from './ISignInBottomSheet';

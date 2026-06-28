@@ -9,7 +9,7 @@ import { formatDecimal } from '@ui/utils/formatDecimal';
 import { Controller, useFormContext } from 'react-hook-form';
 import { Step, StepContent, StepFooter, StepHeader, StepSubtitle, StepTitle } from '../components/Step';
 import { OnboardingSchema } from '../schema';
-import { Input } from '@ui/components/Input ';
+import { Input } from '@ui/components/Input';
 import { useOnboarding } from '../context/useOnboarding';
 
 export function WeightStep() {

@@ -15,7 +15,7 @@ export function useMeal(mealId?: string) {
     enabled: !!mealId,
     queryFn: async () => {
       const { meal } = await MealsService.getMealById(mealId!);
-  console.log('meallll', meal);
+
       return meal;
     },
     refetchInterval: (query) => {

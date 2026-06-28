@@ -10,7 +10,7 @@ import { Controller, useFormContext } from 'react-hook-form';
 import { Step, StepContent, StepFooter, StepHeader, StepSubtitle, StepTitle } from '../components/Step';
 import { useOnboarding } from '../context/useOnboarding';
 import { OnboardingSchema } from '../schema';
-import { Input } from '@ui/components/Input ';
+import { Input } from '@ui/components/Input';
 
 export function HeightStep() {
   const { nextStep } = useOnboarding();

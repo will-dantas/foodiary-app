@@ -8,7 +8,7 @@ import { Controller, useFormContext } from 'react-hook-form';
 import { Alert, ScrollView, TextInput, View } from 'react-native';
 import { Step, StepContent, StepFooter, StepHeader, StepSubtitle, StepTitle } from '../components/Step';
 import { OnboardingSchema } from '../schema';
-import { Input } from '@ui/components/Input ';
+import { Input } from '@ui/components/Input';
 
 export function CreateAccountStep() {
   const emailInputRef = useRef<TextInput>(null);
@@ -38,7 +38,6 @@ export function CreateAccountStep() {
         },
       });
     } catch (error) {
-      console.log(error)
       if (isAxiosError(error) && error.response?.data?.error?.code === ErrorCode.EMAIL_ALREADY_IN_USE) {
         Alert.alert('Oops!', 'Este e-mail já está sendo usado por outro usuário.');
         return;

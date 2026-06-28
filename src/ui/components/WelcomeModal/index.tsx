@@ -33,7 +33,7 @@ export function WelcomeModal() {
   const [visible, setVisible] = useState(signedUp); // TODO: Voltar quando finalizar a tela de onboarding
 
   const goal = goalsMap[account!.profile.goal];
-console.log('signedUp', goal?.icon);
+
   function handleClose() {
     setVisible(false);
   }
