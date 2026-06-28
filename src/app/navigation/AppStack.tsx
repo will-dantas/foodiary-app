@@ -9,7 +9,7 @@ import { View } from 'react-native';
 // import { EditGoals } from '@ui/screens/EditGoals';
 // import { EditProfile } from '@ui/screens/EditProfile';
 import { Home } from '@ui/screens/Home';
-// import { MealDetails } from '@ui/screens/MealDetails';
+import { MealDetails } from '@ui/screens/MealDetails';
 
 type AppStackParamList = {
   Home: undefined;
@@ -38,8 +38,8 @@ export function AppStack() {
       screenOptions={{ headerShown: false }}
     >
       <Stack.Screen name="Home" component={Home} />
-      {/* <Stack.Screen name="MealDetails" component={MealDetails} />
-      <Stack.Screen name="EditGoals" component={EditGoals} />
+      <Stack.Screen name="MealDetails" component={MealDetails} />
+      {/* <Stack.Screen name="EditGoals" component={EditGoals} />
       <Stack.Screen name="EditProfile" component={EditProfile} /> */}
     </Stack.Navigator>
   );
